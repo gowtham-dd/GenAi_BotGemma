@@ -1,0 +1,16 @@
+# Core dependencies
+python-dotenv
+streamlit
+
+# LangChain core
+langchain
+langchain-core
+langchain-community
+
+# OpenAI integration
+langchain-openai
+openai
+
+# Google Gemini integration
+langchain-google-genai
+google-generativeai
