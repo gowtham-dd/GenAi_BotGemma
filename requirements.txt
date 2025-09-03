@@ -14,3 +14,10 @@ openai
 # Google Gemini integration
 langchain-google-genai
 google-generativeai
+
+
+##RAG 
+bs4
+pypdf
+chromadb
+faiss-cpu
