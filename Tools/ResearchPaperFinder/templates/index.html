@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Research Paper Finder</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Research Paper Finder</h1>
+    <form id="query-form">
+      <input type="text" id="query" name="query" placeholder="Enter your research query...">
+      <button type="submit">Search</button>
+    </form>
+
+    <div id="loader" class="loader" style="display:none;"></div>
+    <div id="results"></div>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      $("#query-form").submit(function(e){
+        e.preventDefault();
+        var query = $("#query").val();
+
+        $("#results").empty();
+        $("#loader").show();
+
+        $.post("/ask", { query: query }, function(data){
+          $("#loader").hide();
+          var source = Object.keys(data)[0];  // only one (Exa | Arxiv | Wikipedia)
+
+          var section = $("<div>").addClass("result-section");
+          section.append("<h2>" + source + " Results</h2>");
+
+          data[source].forEach(function(item){
+            var card = $("<div>").addClass("card");
+
+            if(item.title) card.append("<h3>" + item.title + "</h3>");
+            if(item.authors) card.append("<p><b>Authors:</b> " + item.authors + "</p>");
+            if(item.affiliations) card.append("<p><b>Affiliation:</b> " + item.affiliations + "</p>");
+            if(item.excerpt) card.append("<p class='excerpt'>" + item.excerpt + "</p>");
+            if(item.link) card.append("<a href='" + item.link + "' target='_blank'>🔗 Read Full Paper</a>");
+
+            section.append(card);
+          });
+
+          $("#results").append(section);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

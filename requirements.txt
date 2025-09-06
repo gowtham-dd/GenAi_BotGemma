@@ -21,3 +21,9 @@ bs4
 pypdf
 chromadb
 faiss-cpu
+
+## tools
+arxiv
+wikipedia
+langchain_exa
+flask
