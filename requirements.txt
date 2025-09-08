@@ -27,3 +27,12 @@ arxiv
 wikipedia
 langchain_exa
 flask
+
+# Groq
+groq
+langchain-groq
+beautifulsoup4
+
+
+PyPDF
+sentence-transformers
