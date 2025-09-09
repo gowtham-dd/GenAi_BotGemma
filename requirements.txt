@@ -1,38 +1,35 @@
-# Core dependencies
-python-dotenv
-streamlit
+# Core
+python-dotenv>=1.0.1
+streamlit>=1.36.0
 
-# LangChain core
-langchain
-langchain-core
-langchain-community
-
-# OpenAI integration
-langchain-openai
-openai
-
-# Google Gemini integration
+# LangChain (core + community + integrations)
+langchain==0.2.10
+langchain-core==0.2.22
+langchain-community==0.2.9
+langchain-openai==0.1.16
 langchain-google-genai
-google-generativeai
+langchain-groq==0.1.6
 
+# OpenAI + Google
+openai>=1.40.0
+google-generativeai>=0.7.0
 
-##RAG 
-bs4
-pypdf
-chromadb
-faiss-cpu
+# Vectorstores + DBs
+chromadb>=0.5.3
+faiss-cpu>=1.8.0
+cassio>=0.1.5
 
-## tools
-arxiv
-wikipedia
-langchain_exa
-flask
+# RAG helpers
+bs4>=0.0.2
+beautifulsoup4>=4.12.3
+pypdf>=4.2.0
+sentence-transformers>=3.0.1
 
-# Groq
-groq
-langchain-groq
-beautifulsoup4
+# Tools
+arxiv>=1.4.8
+wikipedia>=1.4.0
+langchain_exa>=0.0.2
+flask>=3.0.3
 
-
-PyPDF
-sentence-transformers
+# Other
+groq>=0.6.0
