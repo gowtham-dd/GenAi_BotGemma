@@ -33,3 +33,4 @@ flask
 
 # Other
 groq
+huggingface-hub

@@ -1,0 +1,19 @@
+Flask
+python-dotenv
+wikipedia
+arxiv
+# LangChain core + community tools
+langchain
+langchain-community
+langchain-google-genai
+langchain-exa
+
+# Exa SDK (needed for ExaSearchResults)
+exa-py
+
+# Google generative AI SDK
+google-generativeai
+
+# Other dependencies
+requests
+tqdm
